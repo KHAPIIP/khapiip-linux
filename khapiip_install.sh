@@ -16,8 +16,8 @@ proot-distro install ubuntu
 echo "Initializing Ubuntu environment..."
 proot-distro login ubuntu -- bash -c "exit"
 
-# 1. Sameynta Shortcut-ka Termux
-echo "proot-distro login ubuntu" > /data/data/com.termux/files/usr/bin/khapiip
+# 1. Sameynta Shortcut-ka Termux (HALKAN AYAA WAX LAGA BEDDELAY OO `--shell bash` LAGU DARAY)
+echo "proot-distro login ubuntu --shell bash" > /data/data/com.termux/files/usr/bin/khapiip
 chmod +x /data/data/com.termux/files/usr/bin/khapiip
 
 # 2. Toos ugu qorista Banner-ka iyo Settings-ka gudaha Ubuntu
@@ -48,3 +48,4 @@ echo ""
 EOF
 
 echo -e "\e[1;32mInstallation Finished! Hadda qor 'khapiip' si aad u bilowdo.\e[0m"
+
