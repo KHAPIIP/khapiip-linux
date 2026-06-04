@@ -5,24 +5,28 @@ echo "Updating Termux packages..."
 pkg update && pkg upgrade -y
 pkg install proot-distro -y
 
-# Hubi haddii uu jiro container hore oo khaldamay, si xoog ah u tirtir si loo nadiifiyo dhabaha
-proot-distro clear ubuntu --force 2>/dev/null || true
+# Nadiifi wixii hore
+echo "[*] Nadiifinta haraadigii hore..."
+proot-distro remove ubuntu --force 2>/dev/null || true
 
 echo "Installing Ahmed Khapiip Linux (Ubuntu Base)..."
 proot-distro install ubuntu
 
-# CRITICAL STEP: Halkan ayaan u ogolaanaynaa Ubuntu inuu hal mar is-kiciyo (initialize) 
-# ka dibna si toos ah uga baxaya, si uu u abuuro galka rootfs iyo faylka .bashrc.
+# Kici Ubuntu si galka rootfs u diyaasmo
 echo "Initializing Ubuntu environment..."
 proot-distro login ubuntu -- bash -c "exit"
 
-# 1. Sameynta Shortcut-ka Termux (Amarka 'khapiip')
-# Waxaan isticmaalaynaa /data/data/.../bin si uu u noqdo amar rasmi ah halkii laga isticmaali lahaa alias dhib keeni kara
+# 1. Sameynta Shortcut-ka Termux
 echo "proot-distro login ubuntu" > /data/data/com.termux/files/usr/bin/khapiip
 chmod +x /data/data/com.termux/files/usr/bin/khapiip
 
 # 2. Toos ugu qorista Banner-ka iyo Settings-ka gudaha Ubuntu
-UBUNTU_BASHRC="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/.bashrc"
+UBUNTU_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root"
+UBUNTU_BASHRC="$UBUNTU_ROOT/.bashrc"
+
+# CLIMAX FIX: Halkan haddii galku jiro faylkuna maqan yahay, force-fully ayaan u abuureynaa
+mkdir -p $UBUNTU_ROOT
+touch $UBUNTU_BASHRC
 
 cat << 'EOF' > $UBUNTU_BASHRC
 # --- AHMED KHAPIIP LINUX CONFIGURATION ---
