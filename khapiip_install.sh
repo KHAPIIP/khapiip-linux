@@ -16,19 +16,15 @@ proot-distro install ubuntu
 echo "Initializing Ubuntu environment..."
 proot-distro login ubuntu -- bash -c "exit"
 
-# 1. Sameynta Shortcut-ka Termux (HALKAN AYAA WAX LAGA BEDDELAY OO `--shell bash` LAGU DARAY)
-echo "proot-distro login ubuntu --shell bash" > /data/data/com.termux/files/usr/bin/khapiip
+# 1. Sameynta Shortcut-ka Termux (QAABKA LOOGU TALAGALAY LOGIN SHELL)
+echo "proot-distro login ubuntu" > /data/data/com.termux/files/usr/bin/khapiip
 chmod +x /data/data/com.termux/files/usr/bin/khapiip
 
-# 2. Toos ugu qorista Banner-ka iyo Settings-ka gudaha Ubuntu
-UBUNTU_ROOT="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root"
-UBUNTU_BASHRC="$UBUNTU_ROOT/.bashrc"
+# 2. Toos ugu qorista Banner-ka iyo Settings-ka (WAA /etc/profile MARKAN SI UU U QASBO)
+UBUNTU_PROFILE="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/etc/profile"
 
-# CLIMAX FIX: Halkan haddii galku jiro faylkuna maqan yahay, force-fully ayaan u abuureynaa
-mkdir -p $UBUNTU_ROOT
-touch $UBUNTU_BASHRC
+cat << 'EOF' >> $UBUNTU_PROFILE
 
-cat << 'EOF' > $UBUNTU_BASHRC
 # --- AHMED KHAPIIP LINUX CONFIGURATION ---
 export PS1='\[\e[1;32m\]root@Ahmed-Khapiip\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]# '
 alias ls='ls --color=auto'
