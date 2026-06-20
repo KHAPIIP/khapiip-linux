@@ -16,19 +16,20 @@ proot-distro install ubuntu
 echo "Initializing Ubuntu environment..."
 proot-distro login ubuntu -- bash -c "exit"
 
-# 1. Sameynta Shortcut-ka Termux (QAABKA LOOGU TALAGALAY LOGIN SHELL)
+# 1. Sameynta Shortcut-ka Termux
 echo "proot-distro login ubuntu" > /data/data/com.termux/files/usr/bin/khapiip
 chmod +x /data/data/com.termux/files/usr/bin/khapiip
 
-# 2. Toos ugu qorista Banner-ka iyo Settings-ka (AUTOMATION FIX)
+# 2. Toos ugu qorista Banner-ka iyo Settings-ka (BASH.BASHRC FIX FOR NON-LOGIN SHELL)
 UBUNTU_DIR="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/etc"
-UBUNTU_PROFILE="$UBUNTU_DIR/profile"
+UBUNTU_BASHRC="$UBUNTU_DIR/bash.bashrc"
 
 # Tani waxay hubinaysaa in galka iyo faylku ay jiraan ka hor intaan wax lagu qorin
 mkdir -p $UBUNTU_DIR
-touch $UBUNTU_PROFILE
+touch $UBUNTU_BASHRC
 
-cat << 'EOF' > $UBUNTU_PROFILE
+cat << 'EOF' >> $UBUNTU_BASHRC
+
 # --- AHMED KHAPIIP LINUX CONFIGURATION ---
 export PS1='\[\e[1;32m\]root@Ahmed-Khapiip\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]# '
 alias ls='ls --color=auto'
