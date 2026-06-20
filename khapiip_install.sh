@@ -44,4 +44,3 @@ echo ""
 EOF
 
 echo -e "\e[1;32mInstallation Finished! Hadda qor 'khapiip' si aad u bilowdo.\e[0m"
-
