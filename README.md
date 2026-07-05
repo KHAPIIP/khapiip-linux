@@ -1,11 +1,5 @@
-# 🛡️ Ahmed Khapiip Linux v1.0
-
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Platform](https://img.shields.io/badge/Platform-Termux-orange.svg)
-![Dev](https://img.shields.io/badge/Developer-Puntland%20Dev-blue.svg)
-
-**Ahmed Khapiip Linux** waa nidaam-hawleed (Custom Environment) si gaar ah loogu habeeyay **Termux**. Waxaa loogu talagalay inuu kuu beddelo muuqaalka Terminal-kaaga una beddelo jawi ku habboon **Ethical Hacking** iyo **Cyber Security Education**.
-
+​🚀 KHAPIIP SECURITY DISTRO v2.0 (Kali-Style OS for Android) 🛡️
+​Ma haysatid kombuyuutar balse waxaad rabtaa inaad barato Ethical Hacking iyo Cyber Security? Wax dhib ah ma jiraan! Hadda waxaad taleefankaaga u beddeli kartaa mashiin awood badan oo u shaqeeya sida Kali Linux oo kale iyadoo la isticmaalayo Termux!
 ---
 
 ## ✨ Features (Waxyaabaha uu qabanayo)
